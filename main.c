@@ -6,7 +6,7 @@
 /*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 22:43:07 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/28 23:08:18 by georgy           ###   ########.fr       */
+/*   Updated: 2020/10/28 23:09:41 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ void *ft_memmove (void *dst, const void *src, size_t b_size)
 			*(p_dst + i) = *(p_src + i);
 			i++;
 		}
-
-
 	}
 	return (dst);
 }
