@@ -6,7 +6,7 @@
 /*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 22:43:07 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/28 23:09:41 by georgy           ###   ########.fr       */
+/*   Updated: 2020/10/28 23:29:44 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,21 @@ void *ft_memmove (void *dst, const void *src, size_t b_size)
 	return (dst);
 }
 
+void *ft_memchr (const void *arr, int c, size_t b_size)
+{
+	char	*p_src;
+
+	p_src = (char *)arr;
+	while (b_size)
+	{
+		if (*p_src != (char)c)
+			p_src++;
+		else
+			return (p_src);
+	}
+	return (NULL);
+}
+
 int	main(void)
 {
 	char	src_orig[15] = "1234567890";
@@ -50,4 +65,15 @@ int	main(void)
 	ft_memmove(&dst[3], &src[3], 3);
 	printf("memmove: %s -> ", dst_orig);
 	printf("%s\n", dst);
+
+	char	src_chr[15] = "12345678";
+	char	*sym;
+
+	printf("\nold arr: %s\n", src_chr);
+	sym = ft_memchr(src_chr, '9', 9);
+	if (sym != NULL)
+		sym[0]= '!';
+
+	printf("new arr: %s\n", src_chr);
+	return (0);
 }
