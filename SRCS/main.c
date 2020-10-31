@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
+/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:52:34 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/29 20:00:02 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/10/31 00:18:42 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDES/libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int	main(void)
@@ -183,6 +184,79 @@ printf("*strrchr:\nsymb on the position: %ld", rez_orig_strrchr - strrchr_arr + 
 rez_orig_strrchr_ft = strrchr(strrchr_arr_ft, '4');
 printf("\nsymb on the position: %ld", rez_orig_strrchr_ft - strrchr_arr_ft + 1);
 
+#pragma endregion
+
+#pragma region strnstr()
+char	source_orig[11] = "1234567890";
+char	search_orig[10] = "123";
+char	*rez_strnstr_orig;
+
+char	source[11] = "0123456789";
+char	search[10] = "123";
+char	*rez_strnstr;
+
+rez_strnstr_orig = strnstr(source_orig, search_orig, 17);
+printf("\n\n*strnstr:\norig_rez = %ld\n\n", rez_strnstr_orig-source_orig+1);
+
+rez_strnstr = ft_strnstr(source, search, 17);
+printf("rez = %ld\n", rez_strnstr-source+1);
+#pragma endregion
+
+#pragma region strncmp()
+int	orig_rez_strncmp;
+int	rez_strncmp;
+
+char	strncmp_arr1[11] = "1234567890";
+char	strncmp_arr2[11] = "1234567890";
+
+orig_rez_strncmp = strncmp(strncmp_arr1, "5743", 3);
+rez_strncmp = ft_strncmp(strncmp_arr2, "543", 3);
+printf("\n*strncmp:\norig_rez = %d\nrez = %d ", orig_rez_strncmp, rez_strncmp);
+#pragma endregion
+
+#pragma region atoi()
+int	atoi_orig_rez;
+int	atoi_rez;
+
+//char arr_atoi[11] = "	 -+--+1234jkl5";
+atoi_orig_rez = atoi("	 -1234jkl5");
+printf("\n\n*atoi:\norig_rez = %d\n", atoi_orig_rez);
+atoi_rez = ft_atoi("	 -1234jkl5");
+printf("\nrez = %d\n", atoi_rez);
+#pragma endregion
+
+#pragma region isalpha()
+printf("\nis alpha? - %d\n", ft_isalpha('q'));
+#pragma endregion
+
+#pragma region isadigit()
+printf("\nis digit? - %d\n", ft_isdigit('4'));
+#pragma endregion
+
+#pragma region isalnum()
+printf("\nis digit? - %d\n", ft_isalnum('4'));
+printf("is alpha? - %d\n", ft_isalnum('q'));
+#pragma endregion
+
+#pragma region isascii()
+printf("\nis ascii? - %d\n", ft_isascii('\n'));
+#pragma endregion
+
+#pragma region isascii()
+printf("\nis printable? - %d\n", ft_isprint('0'));
+#pragma endregion
+
+#pragma region toupper()
+printf("\nmake symb 'a' upper - %c\n", (char)ft_toupper('a'));
+#pragma endregion
+
+#pragma region tolower()
+printf("\nmake symb 'A' lower - %c\n", (char)ft_tolower('A'));
+#pragma endregion
+
+#pragma region calloc()
+char	*arr = (char *)ft_calloc(3, sizeof(char));
+printf("*calloc empty arr: %s\n", arr);
 #pragma endregion
 	return (0);
 }
