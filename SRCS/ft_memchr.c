@@ -6,11 +6,11 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:22:16 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/29 19:08:35 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/10/31 14:25:45 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/libft.h"
+#include "libft.h"
 
 void	*ft_memchr(const void *arr, int c, size_t b_size)
 {

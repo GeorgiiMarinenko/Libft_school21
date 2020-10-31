@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 01:15:30 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/31 00:04:44 by georgy           ###   ########.fr       */
+/*   Updated: 2020/10/31 20:34:09 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/libft.h"
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -23,6 +23,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	repetitions = 0;
 	if ((char *)haystack == 0)
 		return ((char *)haystack);
+	if (needle == 0 || *needle == '\0')
+		return ((char *)haystack);
+	if (haystack == 0)
+		return ((char *)&haystack[0]);
+	if (needle == 0)
+		return ((char *)&needle[0]);
+	// if (ft_strlen(needle) == 0)
+	// 	return ((char *)&haystack[0]);
 	while((*haystack != '\0') && (i < len))
 	{
 		if (*haystack == *needle)

@@ -6,11 +6,11 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:52:19 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/29 18:49:24 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/10/31 14:44:52 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/libft.h"
+#include "libft.h"
 
 void	*ft_memset(void *dest, int c, size_t b_size)
 {
@@ -22,5 +22,5 @@ void	*ft_memset(void *dest, int c, size_t b_size)
 		*(p_arr++) = c;
 		b_size--;
 	}
-	return (p_arr);
+	return (dest);
 }

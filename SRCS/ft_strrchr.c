@@ -6,21 +6,22 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 19:39:01 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/29 19:59:31 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/10/31 18:13:59 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/libft.h"
+#include "libft.h"
 
 char	*ft_strrchr(const char *str, int ch)
 {
 	char	*temp_symb = NULL;
-	while (*str != '\0')
+	while (1)
 	{
-		if (*str != (char)ch)
-			str++;
-		else
+		if (*str == (char)ch)
 			temp_symb = (char *)str;
+		if (!*str)
+			break;
+		str++;
 	}
 	return (temp_symb);
 }

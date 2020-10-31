@@ -6,20 +6,22 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 17:28:02 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/29 18:48:19 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/10/31 15:07:04 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/libft.h"
+#include "libft.h"
 
-void *ft_memccpy (void *dest, const void *srcs, int c, size_t b_size)
+void	*ft_memccpy(void *dest, const void *srcs, int c, size_t b_size)
 {
-	unsigned char		*p_dest;
-	const unsigned char	*p_srcs;
+	unsigned char	*p_dest;
+	unsigned char	*p_srcs;
+	unsigned char	ch;
 
-	p_dest = dest;
-	p_srcs = srcs;
+	p_dest = (unsigned char *)dest;
+	p_srcs = (unsigned char *)srcs;
+	ch = c;
 	while (b_size--)
-		if ((*p_dest++ = *p_srcs++) == (char)c) return (dest);
-	return (dest);
+		if ((*p_dest++ = *p_srcs++) == ch) return (p_dest);
+	return (NULL);
 }

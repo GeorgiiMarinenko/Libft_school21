@@ -6,27 +6,25 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 13:01:47 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/29 15:09:03 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/10/31 20:14:41 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/libft.h"
+#include "libft.h"
 
 size_t ft_strlcpy(char *dst, const char *src, size_t b_size)
 {
 	size_t	i;
 
 	i = 0;
-	if (b_size)
+	// if (ft_strlen(src) > b_size)
+	// 	return (ft_strlen(src));
+	if (ft_strlen(src) + 1 < b_size)
+		ft_memcpy(dst, src, ft_strlen(src) + 1);
+	else if (b_size)
 	{
-		b_size--;
-		while ((src[i] != '\0') && (b_size))
-		{
-			dst[i] = src[i];
-			i++;
-			b_size--;
-		}
-		dst[i] = '\0';
+		ft_memcpy(dst, src, b_size - 1);
+		dst[b_size - 1] = '\0';
 	}
-	return (ft_strlen(dst));
+	return (ft_strlen(src));
 }

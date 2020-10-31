@@ -6,11 +6,11 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:43:05 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/29 12:54:43 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/10/31 14:26:40 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/libft.h"
+#include "libft.h"
 
 size_t	ft_strlen (const char *str)
 {

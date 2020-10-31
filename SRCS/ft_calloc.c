@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 00:10:27 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/31 00:16:12 by georgy           ###   ########.fr       */
+/*   Updated: 2020/10/31 20:35:08 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/libft.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t	num, size_t	b_size)
 {
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t	num, size_t	b_size)
 	arr_pointer = (void *)malloc(num * b_size);
 	if (arr_pointer == NULL)
 		return (NULL);
-	ft_bzero(arr_pointer, num);
+	ft_bzero(arr_pointer, num * b_size);
 	return (arr_pointer);
 }
