@@ -6,7 +6,7 @@
 /*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:51:43 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/31 00:32:42 by georgy           ###   ########.fr       */
+/*   Updated: 2020/10/31 23:35:15 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 void	*ft_memset(void *dest, int c, size_t b_size);
 void	ft_bzero(void *dist, size_t count);
@@ -41,4 +42,8 @@ int		ft_tolower(int c);
 void	*ft_calloc(size_t	num, size_t	b_size);
 char	*ft_strdup(char *src);
 
+void	ft_putchar_fd(char symb, int fd);
+void	ft_putstr_fd(const char *str, const int fd);
+void	ft_putnbr_fd(int nb, int fd);
+void	ft_putendl_fd(char const *str, int fd);
 #endif

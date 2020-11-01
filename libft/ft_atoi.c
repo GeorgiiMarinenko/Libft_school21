@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
+/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 01:49:13 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/31 14:25:20 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/10/31 23:04:39 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,7 @@ int	ft_atoi(char *str)
 	while (str[i] && (str[i] >= '0') && (str[i] <= '9'))
 	{
 		nbr *= 10;
-		nbr += (int)str[i] - '0';
-		i++;
+		nbr += str[i++] - '0';
 	}
 	return (nbr * sign);
 }

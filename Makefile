@@ -33,6 +33,14 @@ OBJS = $(SRCS:.c=.o)
 
 CC = gcc
 
+run:
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) -I $(INCLUDES)
+
+binrun:
+	./$(NAME)
+
+lounch: run binrun
+
 .c.o:
 	$(CC) -c $< -o $(<:.c=.o)
 
