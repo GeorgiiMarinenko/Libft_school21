@@ -6,7 +6,7 @@
 /*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:51:43 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/31 23:35:15 by georgy           ###   ########.fr       */
+/*   Updated: 2020/11/01 13:34:07 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,8 @@ void	ft_putchar_fd(char symb, int fd);
 void	ft_putstr_fd(const char *str, const int fd);
 void	ft_putnbr_fd(int nb, int fd);
 void	ft_putendl_fd(char const *str, int fd);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+
 #endif

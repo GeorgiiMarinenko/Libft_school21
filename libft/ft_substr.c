@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 13:01:47 by aarlena           #+#    #+#             */
-/*   Updated: 2020/11/01 13:42:56 by georgy           ###   ########.fr       */
+/*   Created: 2020/11/01 12:57:34 by georgy            #+#    #+#             */
+/*   Updated: 2020/11/01 13:38:02 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t b_size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char			*ret_str;
+	unsigned int	i;
+	unsigned int	j;
 
+	if (s == NULL)
+		return (NULL);
+	ret_str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (ret_str == NULL)
+		return (NULL);
 	i = 0;
-	if ((dst == NULL) && (src == NULL))
-		return (0);
-	if (ft_strlen(src) + 1 < b_size)
-		ft_memcpy(dst, src, ft_strlen(src) + 1);
-	else if (b_size)
+	j = 0;
+	while (s[i])
 	{
-		ft_memcpy(dst, src, b_size - 1);
-		dst[b_size - 1] = '\0';
+		if ((i >= start) && (j < len))
+		{
+			ret_str[j] = s[i];
+			j++;
+		}
+		i++;
 	}
-	return (ft_strlen(src));
+	ret_str[j] = '\0';
+	return (ret_str);
 }

@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 13:01:47 by aarlena           #+#    #+#             */
-/*   Updated: 2020/11/01 13:42:56 by georgy           ###   ########.fr       */
+/*   Created: 2020/11/01 13:24:55 by georgy            #+#    #+#             */
+/*   Updated: 2020/11/01 13:43:39 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t b_size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	char	*ret_str;
 	size_t	i;
+	size_t	j;
 
+	if ((s1 == NULL) || (s2 == NULL))
+		return (NULL);
+	ret_str = (char *)malloc(*s1 * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!ret_str)
+		return (NULL);
 	i = 0;
-	if ((dst == NULL) && (src == NULL))
-		return (0);
-	if (ft_strlen(src) + 1 < b_size)
-		ft_memcpy(dst, src, ft_strlen(src) + 1);
-	else if (b_size)
+	j = 0;
+	while (s1[i])
 	{
-		ft_memcpy(dst, src, b_size - 1);
-		dst[b_size - 1] = '\0';
+		ret_str[i] = s1[i];
+		i++;
 	}
-	return (ft_strlen(src));
+	while (s2[j])
+	{
+		ret_str[i] = s2[j];
+		i++;
+		j++;
+	}
+	ret_str[i] = '\0';
+	return (ret_str);
 }
