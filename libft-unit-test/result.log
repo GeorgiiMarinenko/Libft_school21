@@ -76,7 +76,7 @@ Diffs:
      strtrim: |Hello 	  Please
  Trim me !|
   ft_strtrim: |Hello 	  Please
- Trim me !Aatoi:|
+ Trim me !A|
 
 ft_split:      [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] [OK] {protected}
 [crash]: you did not protect your split
@@ -89,89 +89,7 @@ Test code:
 	exit(TEST_FAILED);
 
 
-ft_itoa:       [FAILED] [OK] [OK] [FAILED] [FAILED] [OK] [KO] [KO] [OK] 
-[fail]: your itoa does not work with basic input
-Test code:
-	char *i1 = ft_itoa(-623);
-	char *i2 = ft_itoa(156);
-	char *i3 = ft_itoa(-0);
-
-	if (strcmp(i1, "-623"))
-	{
-		exit(TEST_FAILED);
-	}
-	if (strcmp(i2, "156"))
-	{
-		exit(TEST_FAILED);
-	}
-	if (strcmp("0", i3))
-	{
-		exit(TEST_FAILED);
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-        itoa: |-623|
-     ft_itoa: ||
-
-[fail]: your itoa does not work with min int
-Test code:
-	char *i1 = ft_itoa((-2147483647 -1));
-
-	if (atoi(i1) != (-2147483647 -1))
-	{
-		exit(TEST_FAILED);
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-        itoa: ||
-     ft_itoa: |0|
-
-[fail]: your itoa don't set \0 at the end of the string
-Test code:
-
-	char *i1 = ft_itoa(-1234);
-	if (strcmp(i1, "-1234"))
-	{
-		exit(TEST_FAILED);
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-        itoa: ||
-     ft_itoa: |-1234|
-
-[KO]: your itoa does not allocate the good size so the \0 test may be false
-Test code:
-	int size;
-	char *i1;
-
-	i1 = ft_itoa(-5859);
-	size = get_last_malloc_size();
-	if (size == 6)
-		exit(TEST_SUCCESS);
-	exit(TEST_KO);
-
-Diffs:
-        itoa: |6|
-     ft_itoa: |5|
-
-[KO]: your itoa does not allocate the good size so the \0 test may be false
-Test code:
-	int size;
-	char *i1;
-
-	i1 = ft_itoa(0);
-	size = get_last_malloc_size();
-	if (size == 2)
-		exit(TEST_SUCCESS);
-	exit(TEST_KO);
-
-Diffs:
-        itoa: |2|
-     ft_itoa: |1|
-
+ft_itoa:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strmapi:    [MISSING]
 ft_putchar_fd: [OK] [OK] [KO] 
 [KO]: your putchar_fd does not work with unicode
