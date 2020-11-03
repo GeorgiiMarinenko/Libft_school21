@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 14:14:40 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/02 23:47:05 by georgy           ###   ########.fr       */
+/*   Updated: 2020/11/03 14:27:02 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (start < finish)
-		ret_str[i++] = s1[start++];
-	ret_str[start] = '\0';
+	{
+		ret_str[i] = s1[start++];
+		i++;
+	}
+
+	ret_str[i] = '\0';
 	return (ret_str);
 }

@@ -57,38 +57,8 @@ ft_calloc:     [OK] [OK] [OK] [OK] [OK]
 ft_strdup:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_substr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}[OK] 
 ft_strjoin:    [OK] [OK] [OK] [OK] [OK] {protected}
-ft_strtrim:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] {protected}
-[fail]: your strtrim does not set \0 to the end of the string
-Test code:
-	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-	char *s2 = "Hello \t  Please\n Trim me !";
-
-	char *ret = ft_strtrim(s1, " \n\t");
-	if (!strcmp(s2, ret))
-	{
-		free(ret);
-		exit(TEST_SUCCESS);
-	}
-	free(ret);
-	exit(TEST_FAILED);
-
-Diffs:
-     strtrim: |Hello 	  Please
- Trim me !|
-  ft_strtrim: |Hello 	  Please
- Trim me !A|
-
-ft_split:      [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] [OK] {protected}
-[crash]: you did not protect your split
-Test code:
-	char *s = "      split       this for   me  !       ";
-
-	char **result = ft_split(s, ' ');
-	if (!result)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-
+ft_strtrim:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
+ft_split:      [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
 ft_itoa:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strmapi:    [MISSING]
 ft_putchar_fd: [OK] [OK] [KO] 

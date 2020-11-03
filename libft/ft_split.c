@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:16:29 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/02 23:45:56 by georgy           ###   ########.fr       */
+/*   Updated: 2020/11/03 14:38:08 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static int	count_words(const char *s, char space)
 
 	i = 0;
 	cnt_words = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		if ((s[i] != space) && (s[i + 1] == space))
@@ -46,6 +48,7 @@ char **ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 	size_t	k;
+	size_t	p;
 	int		cnt_words;
 
 	if (s == NULL)
@@ -54,11 +57,17 @@ char **ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	k = 0;
+	p = 0;
 	char	**rez = (char **)malloc(sizeof(char *) * (cnt_words + 1));
-	for (int p = 0; p < (cnt_words + 1); p++)
-		rez[p] = (char *)malloc(sizeof(char) * 20);
 	if (!rez)
 		return (0);
+	while (p < (cnt_words + 1))
+	{
+		rez[p] = (char *)malloc(sizeof(char) * 20);
+		if (!rez[p])
+			return (NULL);
+		p++;
+	}
 	while (s[i] != 0)
 	{
 		if (ft_is_space(s[i], c) && (s[i] != '\0'))
