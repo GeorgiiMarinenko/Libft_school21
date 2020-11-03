@@ -6,12 +6,11 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:16:29 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/03 14:38:08 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/03 17:44:30 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_is_space(char symb, char space)
 {
@@ -43,7 +42,7 @@ static int	count_words(const char *s, char space)
 	return (cnt_words);
 }
 
-char **ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -53,11 +52,11 @@ char **ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	cnt_words = count_words(s, c);
 	i = 0;
 	j = 0;
 	k = 0;
 	p = 0;
+	cnt_words = count_words(s, c);
 	char	**rez = (char **)malloc(sizeof(char *) * (cnt_words + 1));
 	if (!rez)
 		return (0);
@@ -85,24 +84,7 @@ char **ft_split(char const *s, char c)
 		i++;
 		k++;
 	}
-	if (j <= cnt_words && cnt_words > 1) rez[cnt_words] = NULL;
+	if (j <= cnt_words && cnt_words > 1)
+		rez[cnt_words] = NULL;
 	return (rez);
 }
-
-// int main(void)
-// {
-// 	char	*s = "olol                     ";
-// 	int		i = 0;
-// 	char	**rez = ft_split(s, ' ');
-
-// 	printf("%s\n", rez[0]);
-// 	// printf("%s\n", rez[1]);
-// 	// printf("%s\n", rez[2]);
-// 	// printf("%s\n", rez[3]);
-// 	// printf("%s\n", rez[4]);
-// 	//  printf("%s\n", rez[5]);
-// 	// printf("%s\n", rez[6]);
-// 	// printf("%s\n", rez[7]);
-
-// 	return (0);
-// }

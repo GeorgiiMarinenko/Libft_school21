@@ -18,12 +18,7 @@ ft_strrchr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
 ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strlcpy:    [OK] [OK] [OK] [OK] [OK] [OK] {protected}
 ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strnstr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] 
-[no crash]: your strnstr does not segfault when null parameter is sent
-Test code:
-	ft_strnstr(((void *)0), "fake", 3);
-
-
+ft_strnstr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_atoi:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [KO] [KO] [OK] 
 [KO]: your atoi does not work with over long max value
 Test code:
@@ -60,7 +55,7 @@ ft_strjoin:    [OK] [OK] [OK] [OK] [OK] {protected}
 ft_strtrim:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
 ft_split:      [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
 ft_itoa:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strmapi:    [MISSING]
+ft_strmapi:    [OK] [OK] [OK] [OK] [OK] {protected}
 ft_putchar_fd: [OK] [OK] [KO] 
 [KO]: your putchar_fd does not work with unicode
 Test code:

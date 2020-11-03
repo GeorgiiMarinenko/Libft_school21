@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 23:52:09 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/03 01:05:39 by georgy           ###   ########.fr       */
+/*   Updated: 2020/11/03 17:22:34 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_abs(int n)
 		return (n * (-1));
 }
 
-char *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*res;
 	int		numb_len;
@@ -44,7 +44,7 @@ char *ft_itoa(int n)
 	numb_len = cnt_rank_number(n, minus);
 	res = (char *)malloc(sizeof(char) * (numb_len + 1));
 	if (res == NULL)
-		return NULL;
+		return (NULL);
 	res[numb_len] = '\0';
 	while (numb_len >= minus)
 	{

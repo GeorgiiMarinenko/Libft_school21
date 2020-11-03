@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 23:16:05 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/01 13:12:24 by georgy           ###   ########.fr       */
+/*   Updated: 2020/11/03 15:03:55 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 int		ft_isalnum(int c)
 {
-	int	flag;
-
-	flag = 0;
-
 	if (((c < 'A' || c > 'Z') && (c < 'a' || c > 'z')) && (c < '0' || c > '9'))
 		return (0);
 	else
-	{
-		flag = 1;
-		return (flag);
-	}
+		return (1);
 }

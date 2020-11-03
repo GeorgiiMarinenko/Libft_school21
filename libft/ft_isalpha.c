@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 23:04:53 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/31 14:25:29 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/03 15:42:18 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@ int		ft_isalpha(int c)
 	int	flag;
 
 	flag = 0;
-
 	if ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z'))
 		return (0);
 	else
-	{
-		flag = 1;
-		return (flag);
-	}
+		return (1);
 }

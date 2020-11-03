@@ -6,13 +6,13 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 00:10:27 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/31 20:35:08 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/03 15:06:56 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t	num, size_t	b_size)
+void	*ft_calloc(size_t num, size_t b_size)
 {
 	void	*arr_pointer;
 

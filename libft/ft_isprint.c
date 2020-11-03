@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 23:25:03 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/31 14:25:40 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/03 15:13:26 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int		ft_isprint(int c)
 	int	flag;
 
 	flag = 0;
-
 	if (c < 32 || c > 126)
 		return (0);
 	else

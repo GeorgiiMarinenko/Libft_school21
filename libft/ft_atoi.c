@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 01:49:13 by georgy            #+#    #+#             */
-/*   Updated: 2020/10/31 23:04:39 by georgy           ###   ########.fr       */
+/*   Updated: 2020/11/03 17:42:42 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,34 +33,27 @@ static int	check_nonprintable(char str)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int			ft_atoi(char *str)
 {
 	int	nbr;
 	int	sign;
-	int	sign_cnt;
 	int	i;
 
 	nbr = 0;
 	sign = 1;
-	sign_cnt = 0;
 	i = 0;
 	while (check_nonprintable(str[i]))
 		i++;
-	while ((str[i] == '-') || (str[i] == '+'))
+	if ((str[i] == '+') || (str[i] == '-'))
 	{
 		if (str[i] == '-')
-		{
-			sign *= -1;
-		}
-		if (sign_cnt > 1)
-			return (nbr);
+			sign = -1;
 		i++;
-		sign_cnt++;
 	}
-	while (str[i] && (str[i] >= '0') && (str[i] <= '9'))
+	while ((str[i] >= '0') && (str[i] <= '9'))
 	{
-		nbr *= 10;
-		nbr += str[i++] - '0';
+		nbr = nbr * 10 + (str[i] - '0');
+		i++;
 	}
 	return (nbr * sign);
 }

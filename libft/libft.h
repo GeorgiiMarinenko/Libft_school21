@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:51:43 by aarlena           #+#    #+#             */
-/*   Updated: 2020/11/03 00:05:14 by georgy           ###   ########.fr       */
+/*   Updated: 2020/11/03 19:08:39 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ size_t	ft_strlen (const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t b_size);
 size_t	ft_strlcat(char *dst, const char *src, size_t b_size);
 char	*ft_strchr(const char *str, int ch);
+char	*ft_strrchr(const char *str, int ch);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 int		ft_atoi(char *str);
@@ -52,5 +53,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	**ft_split(char const *s, char c);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

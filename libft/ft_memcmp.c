@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:30:38 by aarlena           #+#    #+#             */
-/*   Updated: 2020/10/31 17:34:04 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/03 15:14:01 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *arr1, const void *arr2, size_t b_size)
 {
-	size_t	i;
+	size_t				i;
 	const unsigned char	*p_arr1;
 	unsigned char		*p_arr2;
 
