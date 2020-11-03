@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
+/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:16:29 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/03 17:44:30 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/04 01:38:26 by georgy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_is_space(char symb, char space)
 {
@@ -32,13 +33,13 @@ static int	count_words(const char *s, char space)
 	while (s[i])
 	{
 		if ((s[i] != space) && (s[i + 1] == space))
-		{
 			cnt_words++;
-			i++;
-			continue;
-		}
 		i++;
 	}
+	if (s[i-1] == space)
+		cnt_words--;
+	if (cnt_words < 0)
+		cnt_words = 0;
 	return (cnt_words);
 }
 
@@ -57,10 +58,19 @@ char		**ft_split(char const *s, char c)
 	k = 0;
 	p = 0;
 	cnt_words = count_words(s, c);
-	char	**rez = (char **)malloc(sizeof(char *) * (cnt_words + 1));
+	printf("\n%d\n", cnt_words);
+	char	**rez;
+	if (cnt_words == 0)
+	{
+		rez = (char**)malloc(sizeof(char *));
+		rez[0] = NULL;
+		return (rez);
+	}
+	rez = (char **)malloc(sizeof(char *) * (cnt_words + 2));
+	rez[1000000] = "o";
 	if (!rez)
 		return (0);
-	while (p < (cnt_words + 1))
+	while (p < (cnt_words + 2))
 	{
 		rez[p] = (char *)malloc(sizeof(char) * 20);
 		if (!rez[p])
@@ -84,7 +94,14 @@ char		**ft_split(char const *s, char c)
 		i++;
 		k++;
 	}
-	if (j <= cnt_words && cnt_words > 1)
-		rez[cnt_words] = NULL;
+		rez[cnt_words+1] = NULL;
 	return (rez);
+}
+
+int	main(void)
+{
+	char		**str;
+	const char	arr[3] = "12";
+	str = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", ' ');
+	printf("\n%s", str[35]);
 }
