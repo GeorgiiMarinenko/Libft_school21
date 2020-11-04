@@ -5,7 +5,7 @@
 ###################################
 
 #Edit the next line with the path of your libft project.
-PATH_LIBFT=/Users/georgy/Desktop/Git/Libft_school21/libft
+PATH_LIBFT=/Users/aarlena/Desktop/School21/Basic/Libft_school21/libft
 
 #If you use a relative path, don't put double quotes.
 #For example :

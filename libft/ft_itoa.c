@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 23:52:09 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/03 17:22:34 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/04 14:30:09 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ char		*ft_itoa(int n)
 	else
 		minus = 0;
 	numb_len = cnt_rank_number(n, minus);
-	res = (char *)malloc(sizeof(char) * (numb_len + 1));
-	if (res == NULL)
+	if (!(res = (char *)malloc(sizeof(char) * (numb_len + 1))))
 		return (NULL);
 	res[numb_len] = '\0';
 	while (numb_len >= minus)
