@@ -34,14 +34,16 @@ SRCS =	ft_memset.c \
 		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
-		ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
+
+SRCS_B =	ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
 
 
 CFLAGS = -Wall -Werror -Wextra
@@ -59,6 +61,12 @@ $(NAME): $(OBJS)
 	$(CC) -c $(SRCS) -I $(HEADER)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
+	rm *.o
+
+bonus: $(OBJS_B)
+	$(CC) -c $(SRCS_B) -I $(HEADER)
+	ar rc $(NAME_B) $(OBJS_B)
+	ranlib $(NAME_B)
 	rm *.o
 
 all: $(NAME)
