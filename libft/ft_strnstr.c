@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 01:15:30 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/03 15:53:24 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/06 17:56:08 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,25 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t			needle_len;
-	unsigned int	repetitions;
+	size_t	i;
+	size_t	j;
 
-	needle_len = ft_strlen(needle);
-	repetitions = 0;
-	if (needle == 0 || *needle == '\0')
+	i = 0;
+	j = 0;
+	if (!*needle)
 		return ((char *)haystack);
-	while ((*haystack != '\0') && (len--))
+	while ((i < len) && (haystack[i] != '\0'))
 	{
-		if (*haystack == *needle)
+		if (needle[0] == haystack[i])
 		{
-			repetitions++;
-			if (repetitions == needle_len)
-				return ((char *)(haystack - (needle_len - 1)));
-			haystack++;
-			needle++;
+			j = 1;
+			while (needle[j] != '\0' && (needle[j] == haystack[i + j])
+					&& ((i + j) < len))
+				j++;
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i]);
 		}
-		else
-		{
-			if (repetitions > 0)
-				repetitions = 0;
-			haystack++;
-		}
+		i++;
 	}
 	return (NULL);
 }
