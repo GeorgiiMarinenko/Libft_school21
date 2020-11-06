@@ -51,33 +51,33 @@ CFLAGS = -Wall -Werror -Wextra
 HEADER = libft.h
 
 OBJS = $(SRCS:.c=.o)
+OBJS_B = $(SRCS_B:.c=.o)
 
 CC = gcc
 
 .c.o:
-	$(CC) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	$(CC) -c $(SRCS) -I $(HEADER)
+$(NAME): $(OBJS) $(HEADER)
+	#$(CC) -c $(SRCS) -I $(HEADER)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
-	rm *.o
 
-bonus: $(OBJS_B)
-	$(CC) -c $(SRCS_B) -I $(HEADER)
-	ar rc $(NAME_B) $(OBJS_B)
-	ranlib $(NAME_B)
-	rm *.o
+bonus: $(OBJS_B) $(OBJS) $(HEADER)
+	#$(CC) -c $(SRCS_B) -I $(HEADER)
+	ar rc $(NAME) $(OBJS_B)
+	ranlib $(NAME)
 
 all: $(NAME)
 
 clean:
-	rm  -f $(OBJS)
+	rm  -f $(OBJS) $(OBJS_B)
+	rm  -f $(OBJS_B)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re run bimrun
-.SILENT: all $(NAME) $(OBJS) run binrun
+.PHONY: all clean fclean re
+.SILENT: all $(NAME) $(OBJS)

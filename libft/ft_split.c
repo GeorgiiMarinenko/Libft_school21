@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:16:29 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/04 17:24:28 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/06 16:47:54 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ char		*create_word(const char *s, char space)
 	return (dst);
 }
 
+static void	arr_free(char **arr, size_t index)
+{
+	while (index)
+	{
+		free(arr[index]);
+		index--;
+	}
+}
+
 char		**ft_split(char const *s, char c)
 {
 	char	**rez;
@@ -72,7 +81,8 @@ char		**ft_split(char const *s, char c)
 			s++;
 		if (*s && *s != c)
 		{
-			rez[k] = create_word(s, c);
+			if (!(rez[k] = create_word(s, c)))
+				arr_free(rez, k);
 			k++;
 			while (*s && *s != c)
 				s++;

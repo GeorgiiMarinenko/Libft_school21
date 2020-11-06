@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 23:52:09 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/04 14:30:09 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/06 16:19:39 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char		*ft_itoa(int n)
 	{
 		digit = n % 10;
 		numb_len--;
-		res[numb_len] = abs(digit) + '0';
+		res[numb_len] = ft_abs(digit) + '0';
 		n /= 10;
 	}
 	if (minus > 0)
