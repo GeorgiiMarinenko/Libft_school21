@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:16:29 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/06 16:47:54 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/09 20:18:07 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	count_words(const char *s, char space)
 	{
 		while (*s && *s == space)
 			s++;
-		if (s[i] && s[i] != space)
+		if (*s && *s != space)
 		{
 			cnt_words++;
 			while (*s && *s != space)
@@ -58,8 +58,8 @@ static void	arr_free(char **arr, size_t index)
 {
 	while (index)
 	{
-		free(arr[index]);
 		index--;
+		free(arr[index]);
 	}
 }
 

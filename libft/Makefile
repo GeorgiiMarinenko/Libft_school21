@@ -56,15 +56,13 @@ OBJS_B = $(SRCS_B:.c=.o)
 CC = gcc
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER)
 
-$(NAME): $(OBJS) $(HEADER)
-	#$(CC) -c $(SRCS) -I $(HEADER)
+$(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-bonus: $(OBJS_B) $(OBJS) $(HEADER)
-	#$(CC) -c $(SRCS_B) -I $(HEADER)
+bonus: $(OBJS_B) $(OBJS)
 	ar rc $(NAME) $(OBJS_B)
 	ranlib $(NAME)
 
@@ -79,4 +77,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-.SILENT: all $(NAME) $(OBJS) $(OBJS_B)
