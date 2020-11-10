@@ -6,7 +6,7 @@
 /*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:16:29 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/09 20:18:07 by aarlena          ###   ########.fr       */
+/*   Updated: 2020/11/10 20:35:29 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 static int	count_words(const char *s, char space)
 {
-	size_t	i;
 	int		cnt_words;
 
-	i = 0;
 	cnt_words = 0;
 	if (!s)
 		return (0);
-	while (s[i])
+	while (*s)
 	{
 		while (*s && *s == space)
 			s++;
@@ -35,7 +33,7 @@ static int	count_words(const char *s, char space)
 	return (cnt_words);
 }
 
-char		*create_word(const char *s, char space)
+static char	*create_word(const char *s, char space)
 {
 	size_t	i;
 	size_t	j;
@@ -54,13 +52,15 @@ char		*create_word(const char *s, char space)
 	return (dst);
 }
 
-static void	arr_free(char **arr, size_t index)
+static char	**arr_free(char **arr, size_t index)
 {
 	while (index)
 	{
 		index--;
 		free(arr[index]);
 	}
+	free(arr);
+	return (NULL);
 }
 
 char		**ft_split(char const *s, char c)
@@ -82,7 +82,7 @@ char		**ft_split(char const *s, char c)
 		if (*s && *s != c)
 		{
 			if (!(rez[k] = create_word(s, c)))
-				arr_free(rez, k);
+				return (rez = arr_free(rez, k));
 			k++;
 			while (*s && *s != c)
 				s++;

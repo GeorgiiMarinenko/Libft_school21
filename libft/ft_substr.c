@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: georgy <georgy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aarlena <aarlena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:57:34 by georgy            #+#    #+#             */
-/*   Updated: 2020/11/01 13:38:02 by georgy           ###   ########.fr       */
+/*   Updated: 2020/11/10 20:03:31 by aarlena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	ret_str = (char *)malloc(sizeof(*s) * (len + 1));
+	ret_str = (char *)malloc(sizeof(*s) * (len + 1));//Уменьшить len до разницы длины s и start
 	if (ret_str == NULL)
 		return (NULL);
 	i = 0;
